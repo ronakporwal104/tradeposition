@@ -31,9 +31,9 @@ public class DistributionService {
         if(Action.INSERT.equals(tradeTransactionModel.getAction())) {
             insertTaskService.addTrade(new InsertTradeTask(tradeTransactionModel, tradeCRUDService));
         } else if(Action.CANCEL.equals(tradeTransactionModel.getAction())) {
-            cancelTaskService.addTrade(new CancelTradeTask(tradeTransactionModel, tradeCRUDService));
+            cancelTaskService.addTrade(new CancelTradeTask(tradeTransactionModel, tradeCRUDService, cancelTaskService));
         } else if(Action.UPDATE.equals(tradeTransactionModel.getAction())) {
-            updateTaskService.addTrade(new UpdateTradeTask(tradeTransactionModel, tradeCRUDService));
+            updateTaskService.addTrade(new UpdateTradeTask(tradeTransactionModel, tradeCRUDService, updateTaskService));
         }
     }
 }

@@ -21,6 +21,7 @@ public class InsertTradeTask implements Runnable{
             // then new try of id and version as 1
         // if trade is already present
             // then use id and increment version
+        System.out.println("INSERT TASK - " + Thread.currentThread().getName());
         TradeTransactionModel dbTrade = tradeCRUDService.getLatestTradeById(trade.getTradeId());
         if(dbTrade==null) {
             trade.setVersion(1);

@@ -21,6 +21,7 @@ public class BaseTaskService implements Runnable{
 
     @Override
     public void run() {
+        System.out.println(Thread.currentThread().getName());
         while(true) {
             try {
                 Runnable trade = tradeQueue.take();
